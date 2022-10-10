@@ -1,2 +1,3 @@
-# documentation
-Documents for ghOSt
+# Linux-ghOSt
+
+Linux using the ghOSt userspace scheduler
