@@ -1,0 +1,2 @@
+# documentation
+Documents for ghOSt
