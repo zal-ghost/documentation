@@ -16,4 +16,4 @@ To start the centralized queue test with RockDB, start the testing with:
 sudo bazel-bin/experinments/scripts/centralized-queue.par {option}
 ```
 
-Where the option could be `cfs` or `ghost` to test either ghost scheduler or the Linux's cfs scheduler.
+Where the option could be `cfs` or `ghost` to test either ghost scheduler or the Linux's cfs scheduler. You may encounter failures, see issue #24 in `google/ghost-userspace` on how to solve it, since some of the testing hard-coded n workers and logical core bindings.
