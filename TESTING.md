@@ -27,7 +27,12 @@ With default arguments `_FIRST_CPU = 10` and `_NUM_ROCKSDB_WORKERS = 6`,
 you need at least 18 cores to run rocksDB experiment.
 With 16 cores, you can change `_FIRST_CPU` to 8 in `experiments/scripts/options.py`.
 
-### Debug
+## Shinjuku and Shenango
 
-C++输出被Python脚本读取和处理，默认没有显示在stdout中。
-在`experiments/scripts/run.py`第291行`WaitForLine`函数中，把它读取的line输出，就可以在stdout中查看C++程序的输出了。
+Follow the centralized-queuing test.
+
+## Notice
+
+C++ output is not directed to `stdout`, change `WaitForLine` in `experiments/scripts/run.py` to output the stdout content.
+
+When performing tests, `enclave` is created via code. If your code fails during executation, enclaves may failed to close and when you run your code for the second time, you would get the `Error 16: Device is busy`, just restart your system would fix this.
