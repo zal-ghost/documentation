@@ -65,3 +65,10 @@ L8050`detach_tasks`函数内，下文也改了。
 L7685把两条check wrap起来，如果有ghost就不check。
 
 L9903这里所有的+1都要反过来，因为放置顺序变了。
+
+## kernel/sched/ghost-core.c
+
+这一部分的修改主要源自于Linux6.0版本部分模块对于`ghost_commit_greedy_txn`函数的定义需求。
+由于该函数的声明存在于kernel/sched/sched.h中，因此需要使用`EXPORT_SYMBORL`宏将其定义进行导出。
+更新处：kernel/sched/ghost_core.c L724
+更新方式：`EXPORT_SYMBOL(ghost_commit_greedy_txn);`
